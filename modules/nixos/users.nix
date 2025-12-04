@@ -18,6 +18,10 @@
 				home = "/home/patchouli";
 				extraGroups = [ "wheel" ];
 
+				openssh.authorizedKeys.keys = [
+					"ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7LfwXAVJrM1KSxVcu5vmlcJBGXarW5YjavgqkCkQJX self@patchouli.sh"
+				];
+
 				inherit hashedPassword;
 			};
 
