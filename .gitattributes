@@ -2,3 +2,6 @@
 
 # Flake lock file.
 flake.lock -diff
+
+# Diff support for secrets.
+secrets.yaml diff=sopsdiffer

@@ -12,6 +12,13 @@
 
 			# The default branch name to use.
 			init.defaultBranch = "main";
+
+			diff = {
+				# For seeing secrets diffs in plaintext.
+				sopsdiffer = {
+					textconv = "sops decrypt";
+				};
+			};
 		};
 	};
 }
