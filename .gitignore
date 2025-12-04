@@ -1,2 +1,5 @@
 # macOS folder metadata
 .DS_Store
+
+# nvd diff
+result

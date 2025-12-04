@@ -1,28 +1,26 @@
 flake := env('FLAKE', justfile_directory())
 
+cmd_rebuild := if os() == "macos" { "sudo darwin-rebuild" } else { "sudo nixos-rebuild" }
+cmd_nom := "nom"
+cmd_nvd := "nvd diff"
+
 [private]
 default:
 	@just --list --unsorted
 
-# Build a system configuration defined by the flake.
-[linux]
-build *args:
-	sudo nixos-rebuild build --flake "{{flake}}" {{args}}
+[private]
+[group('rebuild')]
+rebuild goal *args:
+	{{ cmd_rebuild }} {{ goal }} --flake "{{flake}}" {{args}} |& {{ cmd_nom }}
+	{{ cmd_nvd }} /run/current-system ./result
 
 # Build a system configuration defined by the flake.
-[macos]
-build *args:
-	sudo darwin-rebuild build --flake "{{flake}}" {{args}}
+[group('rebuild')]
+build *args: (rebuild "build" args)
 
 # Build and switch to a system configuration defined by the flake.
-[linux]
-switch *args:
-	sudo nixos-rebuild switch --flake "{{flake}}" {{args}}
-
-# Build and switch to a system configuration defined by the flake.
-[macos]
-switch *args:
-	sudo darwin-rebuild switch --flake "{{flake}}" {{args}}
+[group('rebuild')]
+switch *args: (rebuild "switch" args)
 
 # List secrets.
 [group('secrets')]
@@ -40,10 +38,12 @@ update-secret-keys:
 	sops updatekeys -y secrets.yaml
 
 # Update the inputs to the flake.
+[group('util')]
 update:
 	nix flake update
 
 # Collect garbage and optimize the Nix store.
+[group('util')]
 clean:
 	sudo nix-collect-garbage --delete-older-than 3d
 	sudo nix store optimise
