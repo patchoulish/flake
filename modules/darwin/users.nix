@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
 	system = {
 		# The name for the primary user.
