@@ -71,6 +71,10 @@ in
 
 		# The system(s) output by the flake.
 		hosts = {
+			patchberry = {
+				arch = "aarch64";
+				class = "nixos";
+			};
 			patchmini = {
 				arch = "aarch64";
 				class = "darwin";

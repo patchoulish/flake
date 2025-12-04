@@ -8,7 +8,7 @@
 
 &nbsp;
 
-:construction: Declarative system configurations for my macOS (Darwin) and Windows (WSL) machines. :construction:
+:construction: Declarative system configurations for my NixOS, macOS (Darwin), and Windows (WSL) machines. :construction:
 
 
 ## Systems
@@ -16,6 +16,7 @@ The following systems are managed via this flake:
 
 | Host       | OS             | Arch    | Description                                                  |
 |------------|----------------|---------|--------------------------------------------------------------|
+| patchberry | NixOS          | aarch64 | An ancient Raspberry Pi Model B.                             |
 | patchmini  | macOS (Darwin) | aarch64 | A spare M1 Mac Mini I have lying around to tinker with.      |
 | patchshell | Windows (WSL)  | x86_64  | A NixOS install running under Windows on my primary desktop. |
 
