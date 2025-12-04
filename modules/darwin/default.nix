@@ -1,6 +1,7 @@
 {
 	imports = [
 		./networking
+		./services
 		./nix.nix
 		./users.nix
 	];
