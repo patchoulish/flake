@@ -1,4 +1,8 @@
 {
+	imports = [
+		./networking
+	];
+	
 	wsl = {
 		# Enable support for running NixOS as a WSL distribution.
 		enable = true;
