@@ -39,5 +39,31 @@
 
 	swapDevices = [ ];
 
-	hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+	hardware = {
+		# Enable firmware with a license allowing redistribution.
+		enableRedistributableFirmware = true;
+
+		cpu = {
+			intel = {
+				# Update the CPU microcode for the Intel processor.
+				updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+			};
+		};
+
+		graphics = {
+			# Enable hardware-accelerated graphics.
+			enable = true;
+		};
+
+		nvidia = {
+			# Use the latest stable package.
+			package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+			# Use the open-source kernel module as the GTX 1660 Ti is supported.
+			open = true;
+
+			# Disable nvidia-settings.
+			nvidiaSettings = false;
+		};
+	};
 }
