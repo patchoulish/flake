@@ -1,5 +1,6 @@
 {
 	imports = [
+		./bash
 		./fish
 		./gh
 		./git
