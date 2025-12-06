@@ -16,10 +16,13 @@
 
 	i18n.defaultLocale = "en_CA.UTF-8";
 
-	# TODO: Is this even needed now?
-	services.xserver.xkb = {
-		layout = "us";
-		variant = "";
+	services.xserver = {
+		xkb = {
+			layout = "us";
+			variant = "";
+		};
+
+		videoDrivers = [ "nvidia" ];
 	};
 
 	services.displayManager.gdm.enable = true;
