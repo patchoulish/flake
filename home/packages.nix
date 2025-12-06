@@ -9,6 +9,9 @@
 		age
 		sops
 
+		# Temporary- use gh or something instead.
+		github-desktop
+
 		# For fun.
 		kittysay
 	];

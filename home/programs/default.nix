@@ -6,5 +6,6 @@
 		./hyfetch
 		./kitty
 		./starship
+		./vscode
 	];
 }
