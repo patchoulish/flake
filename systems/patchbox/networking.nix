@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
 	networking = {
 		# The hostname to use.
