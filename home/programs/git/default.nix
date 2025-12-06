@@ -30,15 +30,22 @@
 					textconv = "sops decrypt";
 				};
 			};
+		};
 
-			lfs = {
-				# Enable LFS (large file support).
-				enable = true;
+		signing = {
+			# Sign commits using my SSH key.
+			format = "ssh";
+			key = "~/.ssh/id_ed25519.pub";
+			signByDefault = true;
+		};
 
-				# Don't download large files automatically during clone/pull.
-				# Use 'git lfs pull' to get them later.
-				skipSmudge = true;
-			};
+		lfs = {
+			# Enable LFS (large file support).
+			enable = true;
+
+			# Don't download large files automatically during clone/pull.
+			# Use 'git lfs pull' to get them later.
+			skipSmudge = true;
 		};
 	};
 }
