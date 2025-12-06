@@ -1,7 +1,8 @@
 flake := env('FLAKE', justfile_directory())
 
 cmd_rebuild := if os() == "macos" { "sudo darwin-rebuild" } else { "sudo nixos-rebuild" }
-cmd_nom := "nom"
+cmd_rebuild_args := if os() == "macos" { "" } else { "--log-format internal-json -v" }
+cmd_nom := if os() == "macos" { "nom" } else { "sudo nom --json" }
 cmd_nvd := "nvd diff"
 
 [private]
@@ -11,7 +12,7 @@ default:
 [private]
 [group('rebuild')]
 rebuild goal *args:
-	{{ cmd_rebuild }} {{ goal }} --flake "{{flake}}" {{args}} |& {{ cmd_nom }}
+	{{ cmd_rebuild }} {{ goal }} --flake "{{flake}}" {{cmd_rebuild_args}} {{args}} |& {{ cmd_nom }}
 	{{ cmd_nvd }} /run/current-system ./result
 
 # Build a system configuration defined by the flake.
