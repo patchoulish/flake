@@ -1,8 +1,10 @@
+{ ... }:
 {
 	imports = [
 		./networking
 		./programs
 		./services
+		./boot.nix
 		./users.nix
 	];
 

@@ -4,6 +4,9 @@
 		./networking.nix
 	];
 
+	# Enable silent boot.
+	flake.system.boot.silent = true;
+
 	boot.loader = {
 		systemd-boot.enable = true;
 		efi.canTouchEfiVariables = true;
