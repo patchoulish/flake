@@ -75,6 +75,10 @@ in
 				arch = "aarch64";
 				class = "nixos";
 			};
+			patchbox = {
+				arch = "x86_64";
+				class = "nixos";
+			};
 			patchmini = {
 				arch = "aarch64";
 				class = "darwin";
