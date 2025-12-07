@@ -1,6 +1,7 @@
 {
 	imports = [
 		./bash
+		./chromium
 		./fish
 		./gh
 		./git
