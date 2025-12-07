@@ -34,7 +34,7 @@
 				# The symbol to use for spacing $all and $character$cmd_duration.
 				# See format above for use.
 				symbol = "─";
-				style = "(bold green)";
+				style = "bold green";
 			};
 		};
 	};
