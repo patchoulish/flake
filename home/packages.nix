@@ -9,6 +9,8 @@
 		age
 		sops
 
+		hyprpicker
+
 		# Temporary- use gh or something instead.
 		github-desktop
 
