@@ -35,6 +35,8 @@
 		easy-hosts.url = "github:isabelroses/easy-hosts";
 		
 		apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+
+		nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 	};
 
 	outputs =
