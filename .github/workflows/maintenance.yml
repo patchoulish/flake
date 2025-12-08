@@ -1,0 +1,28 @@
+name: "Maintenance"
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: "0 0 * * FRI" # Every Friday at 12:00 AM
+
+jobs:
+  update-pinned-inputs:
+    name: "Update pinned flake inputs"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+        with:
+          determinate: false
+      - name: Update pinned flake inputs and create pull request
+        uses: DeterminateSystems/update-flake-lock@main
+        with:
+          pr-title: "Update pinned flake inputs"
+          pr-body: "Updates the pinned flake inputs in `flake.lock`. This is an automated pull request."
+          pr-labels: |
+            automation
+            flake
+          pr-assignees: patchoulish
+          pr-reviewers: patchoulish
