@@ -8,6 +8,7 @@
 		./home-manager
 		./hyfetch
 		./kitty
+		./obsidian
 		./starship
 		./vicinae
 		./vscode
