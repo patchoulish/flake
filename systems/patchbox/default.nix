@@ -16,17 +16,28 @@
 				enable = true;
 
 				instances = {
-					vanilla = {
+					modded = 
+					let
+						modpack = pkgs.fetchPackwizModpack {
+							url = "https://github.com/patchoulish/minecraft-modpack/raw/1.0.0/pack.toml";
+							packHash = "sha256-rxwlQdzM+6rKBN0JrdvRy8wbH7tfga4QxrwkXvUW5NQ=";
+						};
+					in
+					{
 						enable = true;
 
-						# Use the latest version of PaperMC for Minecraft 1.21.10.
-						package = pkgs.minecraftServers.paper-1_21_10;
+						# Use the latest version of Fabric for Minecraft 1.20.1.
+						package = pkgs.minecraftServers.fabric-1_20_1;
+
+						symlinks = {
+							"mods" = "${modpack}/mods";
+						};
 
 						# Aikar's suggested JVM flags.
 						# See https://www.spigotmc.org/threads/guide-optimizing-spigot-remove-lag-fix-tps-improve-performance.21726/page-10#post-1055873
 						jvmOpts = lib.concatStringsSep " " [
-							"-Xms4G"
-							"-Xmx4G"
+							"-Xms6G"
+							"-Xmx6G"
 							"-XX:+UseG1GC"
 							"-XX:+UnlockExperimentalVMOptions"
 							"-XX:MaxGCPauseMillis=50"
@@ -39,9 +50,24 @@
 						];
 
 						serverProperties = {
-							white-list = true;
+							allow-flight = true;
 							difficulty = "normal";
-							motd = "Minecraft with fwends!";
+							enforce-whitelist = true;
+							max-players = 16;
+							max-world-size = 4096;
+							motd = "Modded Minecraft with fwends!";
+							op-permission-level = 2;
+							snooper-enabled = false;
+							spawn-protection = 0;
+							white-list = true;
+						};
+
+						operators = {
+							"marxxengelsbl" = {
+								uuid = "2d56b3aa-2fb3-45ea-9029-627595630f90";
+								level = 4;
+								bypassesPlayerLimit = true;
+							};
 						};
 					};
 				};
