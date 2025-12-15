@@ -3,6 +3,8 @@ let
 	additionalClasses = {
 		# WSL systems derive from NixOS ones.
 		wsl = "nixos";
+		# VM systems derive from NixOS ones.
+		vm = "nixos";
 	};
 
 	# Canonicalizes a class i.e. WSL -> NixOS, NixOS -> NixOS.
@@ -66,6 +68,11 @@ in
 					(lib.optionals (class == "wsl") [
 						# Include input module(s) required for WSL.
 						inputs.nixos-wsl.nixosModules.default
+					])
+
+					(lib.optionals (class == "vm") [
+						# Include input module(s) required for VM(s).
+						inputs.disko.nixosModules.disko
 					])
 				];
 			};
