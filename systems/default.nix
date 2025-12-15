@@ -87,6 +87,10 @@ in
 				arch = "x86_64";
 				class = "nixos";
 			};
+			patchcloud = {
+				arch = "x86_64";
+				class = "vm";
+			};
 			patchmini = {
 				arch = "aarch64";
 				class = "darwin";

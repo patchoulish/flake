@@ -18,6 +18,7 @@ The following systems are managed via this flake:
 |------------|----------------|---------|--------------------------------------------------------------|
 | patchberry | NixOS          | aarch64 | An ancient Raspberry Pi Model B.                             |
 | patchbox   | NixOS          | x86_64  | A personal server for myself and friends.                    |
+| patchcloud | NixOS (VM)     | x86_64  | A VPS for tailscale egress/ingress, reverse-DNS, etc.        |
 | patchmini  | macOS (Darwin) | aarch64 | A spare M1 Mac Mini I have lying around to tinker with.      |
 | patchshell | Windows (WSL)  | x86_64  | A NixOS install running under Windows on my primary desktop. |
 
