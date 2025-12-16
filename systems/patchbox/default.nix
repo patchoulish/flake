@@ -12,6 +12,10 @@
 		};
 
 		services = {
+			ddns-updater = {
+				enable = true;
+			};
+
 			minecraft = {
 				enable = true;
 
