@@ -1,8 +1,6 @@
 {
 	imports = [
-		./networking
 		./programs
-		./services
 		./fonts.nix
 		./home-manager.nix
 		./nix.nix

@@ -19,5 +19,12 @@
 			# Explicitly register the binfmt_misc handler for Windows executables.
 			register = true;
 		};
+
+		wslConf = {
+			network = {
+				# Not needed- we use unbound.
+				generateResolvConf = false;
+			};
+		};
 	};
 }
