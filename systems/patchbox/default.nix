@@ -23,8 +23,8 @@
 					modded = 
 					let
 						modpack = pkgs.fetchPackwizModpack {
-							url = "https://raw.githubusercontent.com/patchoulish/minecraft-modpack/1.1.0/pack.toml";
-							packHash = "sha256-17yI3T6GS2lzFu5RNdN9InvWbNIEWXEFAn0fRuhGKyY=";
+							url = "https://raw.githubusercontent.com/patchoulish/minecraft-modpack/1.2.0/pack.toml";
+							packHash = "sha256-mAX8Po8IoW/3JuGaiRGP/wxhYVyyFTJtz6C9XY2ihJA=";
 						};
 					in
 					{
