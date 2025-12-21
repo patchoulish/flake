@@ -1,5 +1,9 @@
 # macOS folder metadata
 .DS_Store
 
+# Nebula signing artifacts
+*.crt
+*.key
+
 # nvd diff
 result
