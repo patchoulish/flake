@@ -5,6 +5,15 @@
 		./networking.nix
 	];
 
+	flake.system = {
+		services = {
+			nebula = {
+				enable = true;
+				isLighthouse = true;
+			};
+		};
+	};
+
 	boot.loader.grub = {
 		efiSupport = true;
 		efiInstallAsRemovable = true;

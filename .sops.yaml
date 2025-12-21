@@ -16,3 +16,18 @@ creation_rules:
       - *system_patchcloud
       - *system_patchmini
       - *system_patchshell
+  - path_regex: secrets\/patchbox\.yaml
+    key_groups:
+    - age:
+      - *patchouli
+      - *system_patchbox
+  - path_regex: secrets\/patchcloud\.yaml
+    key_groups:
+    - age:
+      - *patchouli
+      - *system_patchcloud
+  - path_regex: secrets\/patchshell\.yaml
+    key_groups:
+    - age:
+      - *patchouli
+      - *system_patchshell

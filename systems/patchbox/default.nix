@@ -76,6 +76,10 @@
 					};
 				};
 			};
+			
+			nebula = {
+				enable = true;
+			};
 		};
 	};
 
