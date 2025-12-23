@@ -7,6 +7,10 @@
 
 	flake.system = {
 		services = {
+			chrony = {
+				enable = true;
+			};
+
 			nebula = {
 				enable = true;
 				isLighthouse = true;

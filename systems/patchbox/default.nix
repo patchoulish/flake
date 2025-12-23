@@ -12,6 +12,10 @@
 		};
 
 		services = {
+			chrony = {
+				enable = true;
+			};
+
 			ddns-updater = {
 				enable = true;
 			};
