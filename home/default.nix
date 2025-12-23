@@ -6,4 +6,7 @@
 		./fonts.nix
 		./packages.nix
 	];
+
+	# Use XDG directories whenever supported.
+	home.preferXdgDirectories = true;
 }
