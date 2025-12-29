@@ -1,6 +1,6 @@
 {
-	programs.obsidian = {
-		# Enable Obsidian.
-		enable = true;
-	};
+  programs.obsidian = {
+    # Enable Obsidian.
+    enable = true;
+  };
 }

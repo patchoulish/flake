@@ -1,6 +1,6 @@
 {
-	imports = [
-		./openssh
-		./tailscale
-	];
+  imports = [
+    ./openssh
+    ./tailscale
+  ];
 }

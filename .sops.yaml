@@ -5,29 +5,28 @@ keys:
   - &system_patchcloud age1275h9hxrg7a0j93nnv50zj6wtzxnkf5238p5f5xfv4q4ju0gn4jq884tqh
   - &system_patchmini age1k3yjaw2qjs9y4a3t6z3q93hlj3qnw436wvvxnu9sq0x4y53gd3fq8gl534
   - &system_patchshell age168844yw9thh0n3g9g892su0p6fef76w2y3pdgsm247mvwxzza48qnlnzue
-
 creation_rules:
   - path_regex: secrets\.yaml
     key_groups:
-    - age:
-      - *patchouli
-      - *system_patchberry
-      - *system_patchbox
-      - *system_patchcloud
-      - *system_patchmini
-      - *system_patchshell
+      - age:
+          - *patchouli
+          - *system_patchberry
+          - *system_patchbox
+          - *system_patchcloud
+          - *system_patchmini
+          - *system_patchshell
   - path_regex: secrets\/patchbox\.yaml
     key_groups:
-    - age:
-      - *patchouli
-      - *system_patchbox
+      - age:
+          - *patchouli
+          - *system_patchbox
   - path_regex: secrets\/patchcloud\.yaml
     key_groups:
-    - age:
-      - *patchouli
-      - *system_patchcloud
+      - age:
+          - *patchouli
+          - *system_patchcloud
   - path_regex: secrets\/patchshell\.yaml
     key_groups:
-    - age:
-      - *patchouli
-      - *system_patchshell
+      - age:
+          - *patchouli
+          - *system_patchshell

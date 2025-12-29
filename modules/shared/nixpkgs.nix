@@ -1,8 +1,8 @@
 {
-	nixpkgs = {
-		config = {
-			# Allow unfree packages.
-			allowUnfree = true;
-		};
-	};
+  nixpkgs = {
+    config = {
+      # Allow unfree packages.
+      allowUnfree = true;
+    };
+  };
 }

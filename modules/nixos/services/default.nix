@@ -1,10 +1,10 @@
 {
-	imports = [
-		./chrony
-		./ddns-updater
-		./fail2ban
-		./minecraft
-		./nebula
-		./openssh
-	];
+  imports = [
+    ./chrony
+    ./ddns-updater
+    ./fail2ban
+    ./minecraft
+    ./nebula
+    ./openssh
+  ];
 }

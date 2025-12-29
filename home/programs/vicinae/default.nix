@@ -1,9 +1,9 @@
 {
-    programs.vicinae = {
-        enable = true;
+  programs.vicinae = {
+    enable = true;
 
-        systemd = {
-            enable = true;
-        };
+    systemd = {
+      enable = true;
     };
+  };
 }

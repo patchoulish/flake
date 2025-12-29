@@ -1,18 +1,18 @@
 {
-	imports = [
-		./networking.nix
-		./wsl.nix
-	];
+  imports = [
+    ./networking.nix
+    ./wsl.nix
+  ];
 
-	flake.system = {
-		services = {
-			chrony = {
-				enable = true;
-			};
+  flake.system = {
+    services = {
+      chrony = {
+        enable = true;
+      };
 
-			nebula = {
-				enable = true;
-			};
-		};
-	};
+      nebula = {
+        enable = true;
+      };
+    };
+  };
 }

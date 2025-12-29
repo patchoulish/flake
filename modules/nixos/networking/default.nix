@@ -1,7 +1,7 @@
 {
-	imports = [
-		./dns.nix
-		./firewall.nix
-		./vpn.nix
-	];
+  imports = [
+    ./dns.nix
+    ./firewall.nix
+    ./vpn.nix
+  ];
 }
