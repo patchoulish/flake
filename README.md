@@ -79,6 +79,7 @@ sudo nix run nix-darwin/nix-darwin-25.11#darwin-rebuild -- switch --flake .#<sys
 ## Usage
 
 Using this flake once a system is up is simple. Run `just` from the repository root for a list of commands.
+If you don't have a system up (for whatever reason), run `nix-shell` to enter a development shell and then run `just`.
 
 ## Acknowledgements
 
