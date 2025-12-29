@@ -57,6 +57,16 @@ update-secret-keys:
 update:
 	nix flake update
 
+# Format the repository.
+[group('util')]
+format:
+	treefmt
+
+# Check the formatting for the repository.
+[group('util')]
+format-check:
+	treefmt --fail-on-change --no-cache
+
 # Collect garbage and optimize the Nix store.
 [group('util')]
 clean:
