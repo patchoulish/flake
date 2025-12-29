@@ -1,0 +1,16 @@
+[formatter.markdown]
+command = "mdformat"
+includes = ["*.md"]
+
+[formatter.nix]
+command = "nixfmt"
+includes = ["*.nix"]
+
+[formatter.toml]
+command = "toml-sort"
+includes = ["*.toml"]
+options = ["-i"]
+
+[formatter.yaml]
+command = "yamlfmt"
+includes = ["*.yaml", "*.yml"]
