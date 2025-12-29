@@ -1,6 +1,6 @@
 {
-	networking = {
-		# The hostname to use.
-		hostName = "patchberry";
-	};
+  networking = {
+    # The hostname to use.
+    hostName = "patchberry";
+  };
 }

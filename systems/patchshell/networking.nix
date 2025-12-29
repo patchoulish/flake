@@ -1,6 +1,6 @@
 {
-	networking = {
-		# The hostname to use.
-		hostName = "patchshell";
-	};
+  networking = {
+    # The hostname to use.
+    hostName = "patchshell";
+  };
 }

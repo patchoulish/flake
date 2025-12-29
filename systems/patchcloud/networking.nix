@@ -1,6 +1,6 @@
 {
-	networking = {
-		# The hostname to use.
-		hostName = "patchcloud";
-	};
+  networking = {
+    # The hostname to use.
+    hostName = "patchcloud";
+  };
 }

@@ -1,12 +1,12 @@
 { ... }:
 {
-	imports = [
-		./programs
-		./wayland
-		./fonts.nix
-		./packages.nix
-	];
+  imports = [
+    ./programs
+    ./wayland
+    ./fonts.nix
+    ./packages.nix
+  ];
 
-	# Use XDG directories whenever supported.
-	home.preferXdgDirectories = true;
+  # Use XDG directories whenever supported.
+  home.preferXdgDirectories = true;
 }

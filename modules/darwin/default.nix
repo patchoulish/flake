@@ -1,11 +1,11 @@
 {
-	imports = [
-		./networking
-		./services
-		./nix.nix
-		./users.nix
-	];
+  imports = [
+    ./networking
+    ./services
+    ./nix.nix
+    ./users.nix
+  ];
 
-	# The configuration schema version for nix-darwin.
-	system.stateVersion = 6;
+  # The configuration schema version for nix-darwin.
+  system.stateVersion = 6;
 }

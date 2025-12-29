@@ -1,5 +1,5 @@
 {
-	imports = [
-		./networking.nix
-	];
+  imports = [
+    ./networking.nix
+  ];
 }

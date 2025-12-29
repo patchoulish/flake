@@ -1,20 +1,20 @@
 { pkgs, ... }:
 {
-	# A list of packages to install for the user.
-	home.packages = with pkgs; [
-		# Utilities.
-		nix-output-monitor
-		just
-		nvd
-		age
-		sops
+  # A list of packages to install for the user.
+  home.packages = with pkgs; [
+    # Utilities.
+    nix-output-monitor
+    just
+    nvd
+    age
+    sops
 
-		hyprpicker
+    hyprpicker
 
-		# Temporary- use gh or something instead.
-		github-desktop
+    # Temporary- use gh or something instead.
+    github-desktop
 
-		# For fun.
-		kittysay
-	];
+    # For fun.
+    kittysay
+  ];
 }

@@ -1,23 +1,31 @@
-{ lib, pkgs, config, ... }:
+{
+  lib,
+  pkgs,
+  config,
+  ...
+}:
 let
-	cfg = config.flake.system.boot;
+  cfg = config.flake.system.boot;
 in
 {
-	options.flake.system.boot = {
-		silent = lib.mkOption {
-			type = lib.types.bool;
-			default = true;
-			description = "Whether to boot quietly.";
-		};
-	};
+  options.flake.system.boot = {
+    silent = lib.mkOption {
+      type = lib.types.bool;
+      default = true;
+      description = "Whether to boot quietly.";
+    };
+  };
 
-	config = {
-		boot = lib.mkIf cfg.silent {
-			initrd.verbose = false;
+  config = {
+    boot = lib.mkIf cfg.silent {
+      initrd.verbose = false;
 
-			consoleLogLevel = 0;
+      consoleLogLevel = 0;
 
-			kernelParams = [ "quiet" "udev.log_level=3" ];
-		};
-	};
+      kernelParams = [
+        "quiet"
+        "udev.log_level=3"
+      ];
+    };
+  };
 }

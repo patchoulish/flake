@@ -1,6 +1,6 @@
 {
-	services.tailscale = {
-		# Enable tailscale.
-		enable = true;
-	};
+  services.tailscale = {
+    # Enable tailscale.
+    enable = true;
+  };
 }

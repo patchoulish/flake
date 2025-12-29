@@ -1,6 +1,6 @@
 {
-    imports = [
-        ./chromium
-        ./hyprland
-    ];
+  imports = [
+    ./chromium
+    ./hyprland
+  ];
 }
