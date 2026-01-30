@@ -1,6 +1,5 @@
 keys:
   - &patchouli age1ah07pvg6fxt8smqv3mlcm45796jk2plummy8hu4mw5qt2d00ruxszlg6k9
-  - &system_patchberry age10m0er2cggjuj99c57rx9a2swk4hr0clr9c6ufptazlat49l09uestmdkd0
   - &system_patchbox age1zeyez9a2lyudax86muysp45pw6sgqfl0y2adh9j9mvrr75cj7ymsdlck5g
   - &system_patchcloud age1275h9hxrg7a0j93nnv50zj6wtzxnkf5238p5f5xfv4q4ju0gn4jq884tqh
   - &system_patchmini age1k3yjaw2qjs9y4a3t6z3q93hlj3qnw436wvvxnu9sq0x4y53gd3fq8gl534
@@ -10,7 +9,6 @@ creation_rules:
     key_groups:
       - age:
           - *patchouli
-          - *system_patchberry
           - *system_patchbox
           - *system_patchcloud
           - *system_patchmini
