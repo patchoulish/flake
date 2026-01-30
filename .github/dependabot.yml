@@ -3,4 +3,11 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "daily"
+    labels:
+      - "github-actions"
+      - "chore"
+    assignees:
+      - "patchoulish"
+    commit-message:
+      prefix: "github-actions: "
