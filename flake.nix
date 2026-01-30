@@ -32,6 +32,11 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    flake-compat = {
+      url = "github:NixOS/flake-compat";
+      flake = false;
+    };
+
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,5 +53,46 @@
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ ./systems ];
+
+      perSystem =
+        { pkgs, ... }:
+        {
+          devShells.default = pkgs.mkShell {
+            name = "flake-dev";
+
+            packages = with pkgs; [
+              # For development.
+              nix-output-monitor
+              nvd
+              age
+              sops
+
+              # For source control.
+              git
+
+              # For command recipes.
+              just
+
+              # For pre-commit hooks.
+              pre-commit
+
+              # For formatting.
+              treefmt
+              nixfmt
+              toml-sort
+              yamlfmt
+              mdformat
+            ];
+
+            shellHook = ''
+              echo "Setting up Git hooks..."
+              pre-commit install
+              echo "Git hooks installed."
+              echo ""
+              echo "Welcome to the flake development shell."
+              echo "Run 'just' to see available recipes."
+            '';
+          };
+        };
     };
 }
