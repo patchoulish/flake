@@ -87,6 +87,7 @@ Special thanks to these repositories and their owners/contributors for inspirati
 - [isabelroses/dotfiles](https://github.com/isabelroses/dotfiles)
 - [Misterio77/nix-config](https://github.com/Misterio77/nix-config)
 - [uncenter/flake](https://github.com/uncenter/flake)
+- [mightyiam/infra](https://github.com/mightyiam/infra)
 - *and others.*
 
 As well as a few blog posts and articles, such as:
