@@ -31,7 +31,7 @@ in
   easy-hosts = {
     # The flake module(s) to share across all systems.
     shared.modules = [
-      ../modules/shared
+      ../modules-old/shared
     ];
 
     # The additional system classes to use.
@@ -47,12 +47,12 @@ in
         modules = builtins.concatLists [
           [
             # Include the flake module for the system's canonical class i.e. NixOS.
-            "${self}/modules/${canonicalClass}"
+            "${self}/modules-old/${canonicalClass}"
           ]
 
           (lib.optionals (class != canonicalClass) [
             # Include the module for the system's class i.e. WSL.
-            "${self}/modules/${class}"
+            "${self}/modules-old/${class}"
           ])
 
           (lib.optionals (canonicalClass == "nixos") [
