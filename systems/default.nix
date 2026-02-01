@@ -31,7 +31,7 @@ in
   easy-hosts = {
     # The flake module(s) to share across all systems.
     shared.modules = [
-      ../modules-old/shared
+      #../modules-old/shared
     ];
 
     # The additional system classes to use.
@@ -45,16 +45,6 @@ in
       in
       {
         modules = builtins.concatLists [
-          [
-            # Include the flake module for the system's canonical class i.e. NixOS.
-            "${self}/modules-old/${canonicalClass}"
-          ]
-
-          (lib.optionals (class != canonicalClass) [
-            # Include the module for the system's class i.e. WSL.
-            "${self}/modules-old/${class}"
-          ])
-
           (lib.optionals (canonicalClass == "nixos") [
             # Include input module(s) required for NixOS.
             inputs.home-manager.nixosModules.home-manager
@@ -63,6 +53,8 @@ in
             inputs.nix-minecraft.nixosModules.minecraft-servers
           ])
 
+          (lib.optionals (canonicalClass == "nixos") (builtins.attrValues self.nixosModules))
+
           (lib.optionals (canonicalClass == "darwin") [
             # Include input module(s) required for macOS (Darwin).
             inputs.home-manager.darwinModules.home-manager
@@ -70,10 +62,14 @@ in
             inputs.sops-nix.darwinModules.sops
           ])
 
+          (lib.optionals (canonicalClass == "darwin") (builtins.attrValues self.darwinModules))
+
           (lib.optionals (class == "wsl") [
             # Include input module(s) required for WSL.
             inputs.nixos-wsl.nixosModules.default
           ])
+
+          (lib.optionals (class == "wsl") (builtins.attrValues self.wslModules))
 
           (lib.optionals (class == "vm") [
             # Include input module(s) required for VM(s).

@@ -42,6 +42,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    import-tree.url = "github:vic/import-tree";
+
     easy-hosts.url = "github:isabelroses/easy-hosts";
 
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
@@ -52,7 +54,12 @@
   outputs =
     inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ./systems ];
+      imports = [
+        # Import all top-level modules from the modules/ directory.
+        (inputs.import-tree ./modules)
+
+        ./systems
+      ];
 
       perSystem =
         { pkgs, ... }:

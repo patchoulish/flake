@@ -4,15 +4,11 @@
     ./wsl.nix
   ];
 
-  flake.system = {
-    services = {
-      chrony = {
-        enable = true;
-      };
+  flake.services = {
+    chrony.enable = true;
 
-      nebula = {
-        enable = true;
-      };
-    };
+    openssh.enable = true;
+
+    tailscale.enable = true;
   };
 }

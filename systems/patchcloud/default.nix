@@ -5,17 +5,12 @@
     ./networking.nix
   ];
 
-  flake.system = {
-    services = {
-      chrony = {
-        enable = true;
-      };
+  flake.services = {
+    chrony.enable = true;
 
-      nebula = {
-        enable = true;
-        isLighthouse = true;
-      };
-    };
+    openssh.enable = true;
+
+    tailscale.enable = true;
   };
 
   boot.loader.grub = {
