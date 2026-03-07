@@ -24,6 +24,8 @@
 
     openssh.enable = true;
 
+    unbound.enable = true;
+
     tailscale.enable = true;
 
     minecraft = {
