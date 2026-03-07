@@ -11,19 +11,23 @@ cmd_redeploy := "nix run github:nix-community/nixos-anywhere --"
 default:
 	@just --list --unsorted
 
-[private]
-[group('rebuild')]
-rebuild goal *args:
-	{{ cmd_rebuild }} {{ goal }} --flake "{{flake}}" {{cmd_rebuild_args}} {{args}} |& {{ cmd_nom }}
-	{{ cmd_nvd }} /run/current-system ./result
-
 # Build a system configuration defined by the flake.
 [group('rebuild')]
-build *args: (rebuild "build" args)
+@build *args:
+	{{ cmd_rebuild }} build --flake "{{flake}}" {{cmd_rebuild_args}} {{args}} |& {{ cmd_nom }}
+	{{ cmd_nvd }} /run/current-system ./result
 
 # Build and switch to a system configuration defined by the flake.
 [group('rebuild')]
-switch *args: (rebuild "switch" args)
+@switch *args:
+	# On NixOS, build once to ./result so nvd can diff before activating that exact closure.
+	if [ "{{ os() }}" = "macos" ]; then \
+		{{ cmd_rebuild }} switch --flake "{{flake}}" {{cmd_rebuild_args}} {{args}} |& {{ cmd_nom }}; \
+	else \
+		{{ cmd_rebuild }} build --flake "{{flake}}" {{cmd_rebuild_args}} {{args}} |& {{ cmd_nom }}; \
+		{{ cmd_nvd }} /run/current-system ./result; \
+		sudo ./result/bin/switch-to-configuration switch; \
+	fi
 
 [private]
 [group('redeploy')]
