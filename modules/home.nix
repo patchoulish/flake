@@ -1,7 +1,7 @@
 { ... }:
 let
   homeManagerModule =
-    { pkgs, ... }:
+    { pkgs, inputs', ... }:
     {
       home = {
         # Use XDG directories whenever supported.
@@ -14,6 +14,8 @@ let
           nvd
           age
           sops
+
+          inputs'.gws.packages.default
 
           hyprpicker
 
