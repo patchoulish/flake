@@ -2,6 +2,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
+    systems.url = "github:nix-systems/default";
+
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +19,7 @@
       url = "github:nix-community/stylix/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
+      inputs.systems.follows = "systems";
     };
 
     disko = {
@@ -34,6 +37,11 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
+    };
+
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
@@ -48,6 +56,12 @@
 
     easy-hosts.url = "github:isabelroses/easy-hosts";
 
+    gws = {
+      url = "github:googleworkspace/cli";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     apple-fonts = {
       url = "github:Lyndeno/apple-fonts.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,6 +71,7 @@
       url = "github:Infinidoge/nix-minecraft";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-compat.follows = "flake-compat";
+      inputs.systems.follows = "systems";
     };
   };
 
