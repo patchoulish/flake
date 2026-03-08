@@ -28,7 +28,7 @@ let
         tailscale = {
           authZone = lib.mkOption {
             type = lib.types.bool;
-            default = false;
+            default = config.flake.services.tailscale.enable;
             description = "Whether to add a DNS auth zone for the Tailscale tailnet.";
           };
 
